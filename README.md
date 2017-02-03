@@ -1,45 +1,38 @@
 # lamp
 
-A simple bash script that plays mp3 and ogg files. It's fronend to mpg123
-and ogg123. 
+A simple bash script that plays mp3 and ogg files in local directory or from
+playlist. It's frontend to mpg123 and ogg123.
 
 
 ## Synopsis
 
 ```
-usage: lamp.sh [-t] FILE &
+usage: lamp.sh [-r] [-rt] [-s] [-h] [-p] [-g] [-o] [-w] &
 
-Plays audio FILE (in mp3 or ogg format). It's needed run with ampersand (&) for
-execute it in background.  Optionally, if -t argument is specified, than FILE 
-is played in loop.
-
-positional arguments:
-  FILE           mp3 or ogg audio file
+Plays audio FILEs (in mp3 or ogg format) in local directory. It's needed run
+with ampersand (&) for execute it in background.  
 
 optional arguments:
-  -t            play FILE in loop
+  -r, -repeat         play files in loop
+  -rt -repeat-track   play actual file in loop
+  -s -stop            stop playing actual file
+  -s -stop            terminate program
+  -h -help            show help in slovak language
+  -p N -play N        jump to N track in playlist
+  -g N -gain N        change volume to N (in percent)
+  -g FILE -open FILE  open playlist from FILE
+  -w FILE -wite FILE  write playlist to FILE
 ```
 
 
 ## Usage examples
 
-1. Play one audio file
+1. Play files in local directory
 
-        $ ./lamp.sh music.mp3 &
+        $ ./lamp.sh &
 
-2. Play one audio file in loop
 
-        $ ./lamp.sh -t music.mp3 &
-
-3. Play audio files in directory DIR
-
-        $ ./lamp.sh DIR/*.mp3 &
-
-4. Play audio files in directory DIR in loop
-
-        $ ./lamp.sh -t DIR/*.mp3 &
-
-5. Making `lamp.sh` globally accessible:
+2. Making `lamp.sh` globally accessible:
 
         $ cp lamp.sh ~/bin
         $ export PATH=$PATH:~/bin
