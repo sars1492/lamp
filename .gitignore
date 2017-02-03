@@ -1,0 +1,13 @@
+# Compiled C
+*.o
+
+# Input files
+*.mp3
+*.ogg
+
+# Vim/Emacs backup files
+*~
+
+# Vim  temporary files
+.*~
+*.swp
